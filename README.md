@@ -1,4 +1,7 @@
-# Installation Instructions
+# Feed Reader Testing
+This project tests your ability to create tests to predict if your code will run smoothly without errors using Jasmine.
+
+## Installation Instructions
 
 Step 1: Download the project on [Github](https://github.com/udacity/frontend-nanodegree-feedreader)
 
