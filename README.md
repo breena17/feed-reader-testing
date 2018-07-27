@@ -59,3 +59,6 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 19. Implement error handling for undefined variables and out-of-bound array access.
 20. When complete - all of your tests should pass. 
 21. Write a README file detailing all steps required to successfully run the application. If you have added additional tests (for Udacious Test Coverage),  provide documentation for what these future features are and what the tests are checking for.
+
+## Sources
+If you run into any road blocks, [Matthew Cranford](https://matthewcranford.com) does an excellent job teaching the fundamentals on how to complete this project. [Part 4](https://matthewcranford.com/feed-reader-walkthrough-part-4-async-tests/) on Async testing was very helpful to me, he helped me understand how to code the New Feed test suite.
