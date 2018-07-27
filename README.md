@@ -1,6 +1,16 @@
-# Project Overview
+# Installation Instructions
 
-In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
+Step 1: Download the project on [Github](https://github.com/udacity/frontend-nanodegree-feedreader)
+
+Step 2: Open the index file in your browser.
+
+Step 3: Review JS, CSS, and HTML files to determine functionality.
+
+Step 4: Replace TODO comments with your code in feedreader.js.
+
+Step 5: Determine if specs pass or fail in Jasmine 2.1.2.
+
+Step 6: Your tests are completed and working correctly once all specs pass and turn green.
 
 
 ## Why this Project?
