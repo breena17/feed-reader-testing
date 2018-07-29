@@ -57,8 +57,8 @@ $(function() {
          * hidden by default. 
          */
         it("menu hidden", function() {
-            const menuClass = document.querySelector(".menu-hidden");
-            expect(menuClass).toBeDefined();
+            const body = document.querySelector("body");
+            expect(body.classList.contains("menu-hidden")).toBe(true);
         });
         
          /* test that ensures the menu changes
@@ -85,13 +85,13 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
-        beforeEach(function() {
+        beforeEach(function(done) {
             //first index
-            loadFeed(0);
+            loadFeed(0,done);
         });
         it("after loadFeed completes", function() {
             const feed = document.querySelector(".feed");
-            expect(feed.entry).not.toBe(0);
+            expect(feed.children.length > 0).toBe(true);
         });
     });
     /* new test suite named "New Feed Selection" */
@@ -103,12 +103,16 @@ $(function() {
         const feed = document.querySelector(".feed");
         const firstFeed = [];
         beforeEach(function(done) {
-            loadFeed(0);
-            Array.from(feed.children).forEach(function(h2) {
-                firstFeed.push(h2.innerText);
+            loadFeed(0, function() {
+                Array.from(feed.children).forEach(function(h2) {
+                    firstFeed.push(h2.innerText);
             });
-            loadFeed(1, done);
+            loadFeed(1);
+            });
+        loadFeed(1,function() {
+            done();
         });
+    });
         it("content changes", function() {
             Array.from(feed.children).forEach(function(h2,index) {
                 expect(h2.innerText != firstFeed[index]).toBe(true);
