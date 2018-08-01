@@ -58,7 +58,8 @@ $(function() {
          */
         it("menu hidden", function() {
             const body = document.querySelector("body");
-            expect(body.classList.contains("menu-hidden")).toBe(true);
+            expect($(body).hasClass("menu-hidden")).toBe(true);
+            //expect(body.classList.contains("menu-hidden")).toBe(true);
         });
         
          /* test that ensures the menu changes
@@ -90,8 +91,9 @@ $(function() {
             loadFeed(0,done);
         });
         it("after loadFeed completes", function() {
-            const feed = document.querySelector(".feed");
-            expect(feed.children.length > 0).toBe(true);
+            //const feed = document.querySelector(".feed");
+            expect($(".feed .entry").length > 0).toBe(true);
+            //expect(feed.children.length > 0).toBe(true);
         });
     });
     /* new test suite named "New Feed Selection" */
@@ -107,11 +109,13 @@ $(function() {
                 Array.from(feed.children).forEach(function(h2) {
                     firstFeed.push(h2.innerText);
             });
-            loadFeed(1);
+            loadFeed(1,function() {
+                done();
             });
-        loadFeed(1,function() {
+            });
+        /*loadFeed(1,function() {
             done();
-        });
+        });*/
     });
         it("content changes", function() {
             Array.from(feed.children).forEach(function(h2,index) {
